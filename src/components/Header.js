@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import logo from "../logo.svg";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.scss";
-import { selectUserLogin, loggout } from "../features/user/userSlice";
-import {LoginPopin} from './loginPopin'
+import { selectUserLogin, signOut } from "../features/user/userSlice";
+import { SignIn } from "./signIn";
 
 export const Header = () => {
     const login = useSelector(selectUserLogin);
@@ -21,10 +21,9 @@ export const Header = () => {
                         <b className="user__login">{login},</b>
                         <div>
                             <button
-                                className="user__button_loggout user__button"
+                                className="user__button_sign-out user__button"
                                 onClick={() => {
-                                    dispatch(loggout());
-                                    console.log(55);
+                                    dispatch(signOut());
                                 }}
                             >
                                 Выйти?
@@ -32,9 +31,7 @@ export const Header = () => {
                         </div>
                     </>
                 ) : (
-                    <LoginPopin>
-
-                    </LoginPopin>
+                    <SignIn />
                 )}
             </div>
         </header>

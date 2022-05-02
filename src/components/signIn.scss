@@ -9,42 +9,43 @@
     justify-content: center;
     align-items: center;
     &__ {
-        &inner{
+        &inner {
             background-color: #fff;
             padding: 16px;
             border-radius: 8px;
             position: relative;
             min-width: 280px;
-            &>div{
+            & > div {
                 padding: 5px 0;
                 display: flex;
                 justify-content: space-between;
-                &:last-child{
-                justify-content: flex-end;
+                &:last-child {
+                    justify-content: flex-end;
                 }
-                label{
+                label {
                     padding-right: 16px;
                 }
-                .login__{
-                    &error{
+                .sign-in__ {
+                    &error {
                         color: var(--red);
                     }
-                    &button{
-                    background: var(--peach);
-                    border: 1px solid #ccc;
-                    font-weight: bold;
-                    font-size: 16px;
-                    border-radius: 8px;
-                    padding: 8px 16px;
-                    transition: background .3s;
-                    cursor: pointer;
-                    &:hover{
-                        background: #ccc;
+                    &button {
+                        background: var(--peach);
+                        border: 1px solid #ccc;
+                        font-weight: bold;
+                        font-size: 16px;
+                        border-radius: 8px;
+                        padding: 8px 16px;
+                        transition: background 0.3s;
+                        cursor: pointer;
+                        &:hover {
+                            background: #ccc;
+                        }
                     }
-                }}
+                }
             }
         }
-        &close{
+        &close {
             background: none;
             width: 30px;
             border: 1px solid #ccc;
@@ -53,9 +54,9 @@
             position: absolute;
             right: 10px;
             top: 10px;
-            transition: background .3s;
+            transition: background 0.3s;
             cursor: pointer;
-            &:hover{
+            &:hover {
                 background: #ccc;
             }
         }

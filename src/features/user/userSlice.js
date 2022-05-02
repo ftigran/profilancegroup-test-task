@@ -36,7 +36,7 @@ export const userReducer = createSlice({
             state.type = action.payloadtype;
             state.login = action.payload.login;
         },
-        loggout: (state) => {
+        signOut: (state) => {
             // Redux Toolkit allows us to write "mutating" logic in reducers. It
             // doesn't actually mutate the state because it uses the Immer library,
             // which detects changes to a "draft state" and produces a brand new
@@ -47,8 +47,7 @@ export const userReducer = createSlice({
     },
 });
 
-export const { loggout, signIn } =
-    userReducer.actions;
+export const { signOut, signIn } = userReducer.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

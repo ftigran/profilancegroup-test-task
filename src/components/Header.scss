@@ -20,17 +20,17 @@
         &user {
             .user {
                 &__ {
-                    &button{
+                    &button {
                         border: none;
                         text-decoration: underline;
                         background: none;
                         cursor: pointer;
-                        transition: background .3s;
-                        &:hover{
+                        transition: background 0.3s;
+                        &:hover {
                             background: var(--peach);
                             border-radius: 7px;
                         }
-                        &_loggout {
+                        &_sign-out {
                             color: var(--red);
                         }
                     }
