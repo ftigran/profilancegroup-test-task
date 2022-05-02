@@ -20,6 +20,6 @@ export const news = [
         description:
             "Microsoft предупредила о скором окончании поддержки браузера Internet Explorer",
         date: "21:23 02.05.2022",
-        isApproved: true,
+        isApproved: false,
     },
 ];

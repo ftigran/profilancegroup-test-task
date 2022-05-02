@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "./components/Header";
-import { Home } from "./pages/home";
-import { News } from "./pages/news";
+import { Home } from "./pages/Home";
+import { News } from "./pages/News";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 

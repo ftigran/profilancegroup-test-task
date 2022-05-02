@@ -30,7 +30,6 @@ export const SignIn = () => {
                     type: user.type,
                 })
             );
-            console.log(user, user.type);
             return;
         }
         setIsHasError(true);
