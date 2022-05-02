@@ -30,7 +30,7 @@ export const SignIn = () => {
                     type: user.type,
                 })
             );
-            console.log(user, user.type)
+            console.log(user, user.type);
             return;
         }
         setIsHasError(true);
@@ -56,10 +56,12 @@ export const SignIn = () => {
                             <input ref={loginRef} id="login" />
                         </div>
                         <div>
-                            <label htmlFor="password">
-                                Пароль
-                            </label>
-                            <input ref={passwordRef} id="password" type="password" />
+                            <label htmlFor="password">Пароль</label>
+                            <input
+                                ref={passwordRef}
+                                id="password"
+                                type="password"
+                            />
                         </div>
                         {isHasError && (
                             <div>

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { news } from "./news";
 
-const newsLSName = 'news'
+const newsLSName = "news";
 const initialState = {
     news: JSON.parse(localStorage.getItem(newsLSName)) || news,
     value: 0,
@@ -18,7 +18,7 @@ export const newsReducer = createSlice({
             state.login = action.payload.login;
         },
         approveNews: (state) => {
-            writeLSNews(state.news)
+            writeLSNews(state.news);
         },
     },
 });
