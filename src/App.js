@@ -1,15 +1,29 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
+import { Header } from './components/Header';
+import {BrowserRouter} from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  selectUserName,
+} from './features/user/userSlice';
 import './App.css';
 
 function App() {
+  // const [login, useLogin]
+  const userName = useSelector(selectUserName);
+
   return (
+    <BrowserRouter
+      // basename={'https://ftigran.github.io/profilancegroup-test-task/'}
+   >
     <div className="App">
+      <Header/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
+        {userName}
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <span>
@@ -52,6 +66,7 @@ function App() {
         </span>
       </header>
     </div>
+   </BrowserRouter>
   );
 }
 
