@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCount } from '../counter/counterAPI';
+import { admin, basic, guest } from './userTypes';
 
 const initialState = {
   name: 'frigran',
-  login: null,
-  type: null,
+  login: 'ftigran',
+  type: guest,
   value: 0,
   status: 'idle',
 };
@@ -62,12 +63,12 @@ export const { increment, decrement, incrementByAmount } = userReducer.actions;
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectUserName = (state) => state.user.name;
+export const selectUserLogin = (state) => state.user.login;
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.
 export const incrementIfOdd = (amount) => (dispatch, getState) => {
-  const currentValue = selectUserName(getState());
+  const currentValue = selectUserLogin(getState());
   if (currentValue % 2 === 1) {
     dispatch(incrementByAmount(amount));
   }
