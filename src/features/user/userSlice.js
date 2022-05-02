@@ -3,7 +3,6 @@ import { fetchCount } from "../counter/counterAPI";
 import { admin, basic, guest } from "./userTypes";
 
 const initialState = {
-    name: "frigran",
     login: "ftigran",
     type: guest,
     value: 0,
@@ -29,6 +28,14 @@ export const userReducer = createSlice({
     initialState,
     // The `reducers` field lets us define reducers and generate associated actions
     reducers: {
+        loggout: (state) => {
+            // Redux Toolkit allows us to write "mutating" logic in reducers. It
+            // doesn't actually mutate the state because it uses the Immer library,
+            // which detects changes to a "draft state" and produces a brand new
+            // immutable state based off those changes
+            state.type = guest;
+            state.login = null;
+        },
         increment: (state) => {
             // Redux Toolkit allows us to write "mutating" logic in reducers. It
             // doesn't actually mutate the state because it uses the Immer library,
@@ -58,7 +65,8 @@ export const userReducer = createSlice({
     },
 });
 
-export const { increment, decrement, incrementByAmount } = userReducer.actions;
+export const { loggout, increment, decrement, incrementByAmount } =
+    userReducer.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

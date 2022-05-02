@@ -1,3 +1,6 @@
 .app {
     text-align: center;
+    --red: #ee3238;
+    --orange: #ffc22d;
+    --peach: #ffeecd;
 }
