@@ -1,14 +1,13 @@
 import React from "react";
-import { Counter } from "./features/counter/Counter";
 import { Header } from "./components/Header";
 import { Home } from "./pages/home";
+import { News } from "./pages/news";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
 function App() {
-    // const [login, useLogin]
-
     return (
         <Router
         // basename={'https://ftigran.github.io/profilancegroup-test-task/'}
@@ -17,7 +16,7 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/news" element={<div>news</div>} />
+                    <Route path="/news" element={<News/>} />
                 </Routes>
             </div>
         </Router>
