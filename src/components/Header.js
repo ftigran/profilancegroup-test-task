@@ -4,6 +4,7 @@ import logo from "../logo.svg";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.scss";
 import { selectUserLogin, loggout } from "../features/user/userSlice";
+import {LoginPopin} from './loginPopin'
 
 export const Header = () => {
     const login = useSelector(selectUserLogin);
@@ -31,7 +32,9 @@ export const Header = () => {
                         </div>
                     </>
                 ) : (
-                    <div>Войти</div>
+                    <LoginPopin>
+
+                    </LoginPopin>
                 )}
             </div>
         </header>
