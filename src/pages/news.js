@@ -6,29 +6,50 @@ import { selectNews } from "../features/news/newsSlice";
 import { guest, admin } from "../features/user/userTypes";
 import { NewsItem } from "../components/NewsItem";
 
+const NewsList = React.memo(({ news, isAdmin }) => {
+    if (news && news.length)
+        return news.map((data) => (
+            <NewsItem isAdmin={isAdmin} key={data.id} data={data} />
+        ));
+    return <h3>Новостей нет!</h3>;
+});
+
 export const News = () => {
-    let filteredNews = useSelector(selectNews);
+    let news = useSelector(selectNews);
+    const [query, setQuery] = React.useState("");
     const type = useSelector(selectUserType);
     const isAdmin = type === admin;
     const isGuest = type === guest;
+    console.log("render");
     if (isGuest) {
-        filteredNews = filteredNews.filter(({ isApproved }) => isApproved);
+        news = news.filter(({ isApproved }) => isApproved);
     }
+    if (query) {
+        let trimmedQuery = query.trim().toLowerCase();
+        news = news.filter(
+            ({ title, description }) =>
+                title.toLowerCase().includes(trimmedQuery) ||
+                description.toLowerCase().includes(trimmedQuery)
+        );
+    }
+
+    const onTyping = (e) => {
+        console.log(44, e.target.value);
+        setQuery(e.target.value);
+    };
     return (
         <div className="newspage">
             <h1>Новости</h1>
             <div className="news">
                 <div className="news__controls">
-                    <input placeholder="Введите запрос"/>
-                    <button>➕ Добавить</button>
+                    <input
+                        placeholder="Введите запрос"
+                        value={query}
+                        onChange={onTyping}
+                    />
+                    <button>+Добавить</button>
                 </div>
-                {filteredNews && filteredNews.length ? (
-                    filteredNews.map((data) => (
-                        <NewsItem isAdmin={isAdmin} key={data.id} data={data} />
-                    ))
-                ) : (
-                    <h3>Новостей нет!</h3>
-                )}
+                <NewsList isAdmin={isAdmin} news={news} />
             </div>
         </div>
     );

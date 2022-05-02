@@ -3,12 +3,12 @@
     max-width: 960px;
     margin: auto;
     flex-wrap: wrap;
-    &__controls{
+    &__controls {
         display: flex;
         width: 100%;
         padding: 0 8px 16px;
         justify-content: space-between;
-        input{
+        input {
             min-width: 200px;
         }
     }

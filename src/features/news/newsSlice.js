@@ -22,12 +22,12 @@ export const newsReducer = createSlice({
             if (approvedNews) approvedNews.isApproved = true;
         },
         deleteNews: (state, action) => {
-            state.news = state.news.filter(({id}) => id !== action.payload)
+            state.news = state.news.filter(({ id }) => id !== action.payload);
         },
     },
 });
 
-export const { createNews, approveNews,deleteNews } = newsReducer.actions;
+export const { createNews, approveNews, deleteNews } = newsReducer.actions;
 
 export const selectNews = (state) => state.news.news;
 

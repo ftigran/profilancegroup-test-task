@@ -3,21 +3,21 @@
     --red: #ee3238;
     --orange: #ffc22d;
     --peach: #ffeecd;
-    button{
+    button {
         background: none;
         $green: #00ba00;
         color: $green;
         border: 1px solid $green;
         border-radius: 8px;
-        transition: background .3s;
+        transition: background 0.3s;
         cursor: pointer;
         height: 26px;
         padding: 4px 8px;
-        &:hover{
+        &:hover {
             background: rgb(235, 234, 234);
         }
     }
-    input{
+    input {
         border-radius: 8px;
         padding: 4px 8px;
         border-width: 1px;
@@ -25,4 +25,3 @@
         height: 16px;
     }
 }
-

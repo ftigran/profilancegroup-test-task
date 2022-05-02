@@ -1,12 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import "./NewsItem.scss";
-import { approveNews,deleteNews } from "../features/news/newsSlice";
+import { approveNews, deleteNews } from "../features/news/newsSlice";
 
 const ApproveButton = ({ newsId }) => {
     const dispatch = useDispatch();
     return (
-        <button onClick={() => dispatch(approveNews(newsId))} className="news-item__approve-button">
+        <button
+            onClick={() => dispatch(approveNews(newsId))}
+            className="news-item__approve-button"
+        >
             Одобрить?
         </button>
     );
@@ -15,7 +18,10 @@ const ApproveButton = ({ newsId }) => {
 const DeleteButton = ({ newsId }) => {
     const dispatch = useDispatch();
     return (
-        <button onClick={() => dispatch(deleteNews(newsId))} className="news-item__delete-button">
+        <button
+            onClick={() => dispatch(deleteNews(newsId))}
+            className="news-item__delete-button"
+        >
             Удалить
         </button>
     );
@@ -31,7 +37,7 @@ export const NewsItem = ({
         <div className="news-item__info">
             <div>{date}</div>
             <div>
-                {isAdmin &&<DeleteButton newsId={id}/>}
+                {isAdmin && <DeleteButton newsId={id} />}
                 {isApproved ? (
                     "Одобрено ✅"
                 ) : isAdmin ? (
@@ -43,4 +49,3 @@ export const NewsItem = ({
         </div>
     </div>
 );
-
