@@ -14,6 +14,7 @@
             padding: 16px;
             border-radius: 8px;
             position: relative;
+            min-width: 280px;
             &>div{
                 padding: 5px 0;
                 display: flex;
@@ -24,7 +25,11 @@
                 label{
                     padding-right: 16px;
                 }
-                .login__button{
+                .login__{
+                    &error{
+                        color: var(--red);
+                    }
+                    &button{
                     background: var(--peach);
                     border: 1px solid #ccc;
                     font-weight: bold;
@@ -36,7 +41,7 @@
                     &:hover{
                         background: #ccc;
                     }
-                }
+                }}
             }
         }
         &close{
