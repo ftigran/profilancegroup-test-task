@@ -3,7 +3,7 @@ import { fetchCount } from "../counter/counterAPI";
 import { admin, basic, guest } from "./userTypes";
 
 const initialState = {
-    login: null,
+    login: "null",
     type: guest,
     value: 0,
     status: "idle",

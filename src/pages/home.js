@@ -14,9 +14,7 @@ export const Home = () => {
                 Привет, {login ? login : "Гость"}
             </p>
             <div>
-                <Link to="/news" className="">
-                    Новости
-                </Link>
+                <Link to="/news">Новости</Link>
             </div>
         </div>
     );

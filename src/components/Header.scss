@@ -17,7 +17,15 @@
                 background-color: #ccc;
             }
         }
+        &nav {
+            display: flex;
+            font-size: 16px;
+            a {
+                color: #000;
+            }
+        }
         &user {
+            margin-left: 28px;
             .user {
                 &__ {
                     &button {
@@ -26,6 +34,7 @@
                         background: none;
                         cursor: pointer;
                         transition: background 0.3s;
+                        font-size: 16px;
                         &:hover {
                             background: var(--peach);
                             border-radius: 7px;

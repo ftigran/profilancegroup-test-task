@@ -15,11 +15,12 @@ export const Header = () => {
             <Link to="/" className="header__logo">
                 <img src={logo} />
             </Link>
-            <div className="header__user user">
-                {login ? (
-                    <>
-                        <b className="user__login">{login},</b>
-                        <div>
+            <div className="header__nav">
+                <Link to="/news">Новости</Link>
+                <div className="header__user user">
+                    {login ? (
+                        <>
+                            <b className="user__login">{login},</b>
                             <button
                                 className="user__button_sign-out user__button"
                                 onClick={() => {
@@ -28,11 +29,11 @@ export const Header = () => {
                             >
                                 Выйти?
                             </button>
-                        </div>
-                    </>
-                ) : (
-                    <SignIn />
-                )}
+                        </>
+                    ) : (
+                        <SignIn />
+                    )}
+                </div>
             </div>
         </header>
     );
