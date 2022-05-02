@@ -4,7 +4,7 @@ import logo from "../logo.svg";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.scss";
 import { selectUserLogin, signOut } from "../features/user/userSlice";
-import { SignIn } from "./signIn";
+import { SignIn } from "./SignIn";
 
 export const Header = () => {
     const login = useSelector(selectUserLogin);

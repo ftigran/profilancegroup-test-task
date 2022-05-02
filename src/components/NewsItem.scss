@@ -1,0 +1,28 @@
+.news-item {
+    border: 1px solid var(--peach);
+    margin: 8px;
+    padding: 16px;
+    border-radius: 4px;
+    width: calc(50% - 16px);
+    box-sizing: border-box;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    h5 {
+        font-size: 16px;
+        margin: 0;
+    }
+    &__ {
+        &info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-grow: 1;
+        }
+    }
+    .news-item__delete-button{
+        color: var(--red);
+        border-color: var(--red);
+        margin-right: 16px;
+    }
+}

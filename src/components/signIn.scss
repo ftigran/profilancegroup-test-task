@@ -30,35 +30,36 @@
                         color: var(--red);
                     }
                     &button {
-                        background: var(--peach);
-                        border: 1px solid #ccc;
-                        font-weight: bold;
-                        font-size: 16px;
-                        border-radius: 8px;
-                        padding: 8px 16px;
-                        transition: background 0.3s;
-                        cursor: pointer;
-                        &:hover {
-                            background: #ccc;
-                        }
+                        // background: var(--peach);
+                        // border: 1px solid #ccc;
+                        // font-weight: bold;
+                        // font-size: 16px;
+                        // border-radius: 8px;
+                        // padding: 8px 16px;
+                        // transition: background 0.3s;
+                        // cursor: pointer;
+                        // &:hover {
+                        //     background: #ccc;
+                        // }
                     }
                 }
             }
         }
-        &close {
-            background: none;
-            width: 30px;
-            border: 1px solid #ccc;
-            border-radius: 15px;
-            height: 30px;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            transition: background 0.3s;
-            cursor: pointer;
-            &:hover {
-                background: #ccc;
-            }
+    }
+    .popin__close {
+        background: none;
+        width: 30px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        height: 30px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: #000;
+        transition: background 0.3s;
+        cursor: pointer;
+        &:hover {
+            background: #ccc;
         }
     }
 }
