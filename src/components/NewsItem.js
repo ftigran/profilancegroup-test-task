@@ -35,8 +35,8 @@ export const NewsItem = ({
         <h5>{title}</h5>
         <p>{description}</p>
         <div className="news-item__info">
-            <div>{date}</div>
-            <div>
+            <div className="news-item__date">{date}</div>
+            <div className="news-item__controls">
                 {isAdmin && <DeleteButton newsId={id} />}
                 {isApproved ? (
                     "Одобрено ✅"

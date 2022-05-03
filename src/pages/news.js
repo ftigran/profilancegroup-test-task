@@ -5,6 +5,7 @@ import { selectUserType } from "../features/user/userSlice";
 import { selectNews } from "../features/news/newsSlice";
 import { guest, admin } from "../features/user/userTypes";
 import { NewsItem } from "../components/NewsItem";
+import { CreateNewsButton } from "../components/CreateNewsButton";
 
 const NewsList = React.memo(({ news, isAdmin }) => {
     if (news && news.length)
@@ -20,7 +21,7 @@ export const News = () => {
     const type = useSelector(selectUserType);
     const isAdmin = type === admin;
     const isGuest = type === guest;
-    console.log("render");
+
     if (isGuest) {
         news = news.filter(({ isApproved }) => isApproved);
     }
@@ -32,22 +33,18 @@ export const News = () => {
                 description.toLowerCase().includes(trimmedQuery)
         );
     }
-
-    const onTyping = (e) => {
-        console.log(44, e.target.value);
-        setQuery(e.target.value);
-    };
     return (
         <div className="newspage">
             <h1>Новости</h1>
             <div className="news">
                 <div className="news__controls">
                     <input
+                        className="search"
                         placeholder="Введите запрос"
                         value={query}
-                        onChange={onTyping}
+                        onChange={({ target: { value } }) => setQuery(value)}
                     />
-                    <button>+Добавить</button>
+                    {!isGuest && <CreateNewsButton />}
                 </div>
                 <NewsList isAdmin={isAdmin} news={news} />
             </div>

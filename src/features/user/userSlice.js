@@ -3,9 +3,7 @@ import { admin, basic, guest } from "./userTypes";
 
 const initialState = {
     login: null,
-    type: admin,
-    value: 0,
-    status: "idle",
+    type: guest,
 };
 
 export const userReducer = createSlice({

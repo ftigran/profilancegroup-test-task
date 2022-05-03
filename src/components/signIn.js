@@ -1,19 +1,19 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import "./SignIn.scss";
 import { signIn } from "../features/user/userSlice";
 import { users } from "../features/user/users";
+import { Popin } from "./Popin";
 
 export const SignIn = () => {
     const dispatch = useDispatch();
 
-    const [isOpenned, setIsOpenned] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
     const [isHasError, setIsHasError] = React.useState(false);
     const showPopin = () => {
-        setIsOpenned(true);
+        setOpen(true);
     };
-    const closePopin = () => {
-        setIsOpenned(false);
+    const onClose = () => {
+        setOpen(false);
     };
 
     const loginRef = React.useRef();
@@ -43,43 +43,25 @@ export const SignIn = () => {
             >
                 Войти
             </button>
-            {isOpenned && (
-                <div className="popin">
-                    <div className="popin__inner sign-in">
-                        <button className="popin__close" onClick={closePopin}>
-                            X
-                        </button>
-                        <h1>Войти</h1>
-                        <div>
-                            <label htmlFor="login">Логин</label>
-                            <input ref={loginRef} id="login" />
-                        </div>
-                        <div>
-                            <label htmlFor="password">Пароль</label>
-                            <input
-                                ref={passwordRef}
-                                id="password"
-                                type="password"
-                            />
-                        </div>
-                        {isHasError && (
-                            <div>
-                                <span className="sign-in__error">
-                                    Пользователь не найден!
-                                </span>
-                            </div>
-                        )}
-                        <div>
-                            <button
-                                className="sign-in__button"
-                                onClick={loginUser}
-                            >
-                                Войти
-                            </button>
-                        </div>
-                    </div>
+            <Popin open={open} onClose={onClose} className="sign-in">
+                <h1>Войти</h1>
+                <div>
+                    <label htmlFor="login">Логин</label>
+                    <input ref={loginRef} id="login" />
                 </div>
-            )}
+                <div>
+                    <label htmlFor="password">Пароль</label>
+                    <input ref={passwordRef} id="password" type="password" />
+                </div>
+                {isHasError && (
+                    <div>
+                        <span className="error">Пользователь не найден!</span>
+                    </div>
+                )}
+                <div>
+                    <button onClick={loginUser}>Войти</button>
+                </div>
+            </Popin>
         </>
     );
 };

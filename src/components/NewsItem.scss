@@ -8,6 +8,10 @@
     text-align: start;
     display: flex;
     flex-direction: column;
+    @media (max-width: 600px) {
+        width: 100%;
+        margin: 16px;
+    }
     h5 {
         font-size: 16px;
         margin: 0;
@@ -19,10 +23,34 @@
             align-items: flex-end;
             flex-grow: 1;
         }
-    }
-    .news-item__delete-button {
-        color: var(--red);
-        border-color: var(--red);
-        margin-right: 16px;
+        &date {
+            width: 135px;
+            flex-shrink: 0;
+            margin-right: 16px;
+        }
+        &controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            .news-item__delete-button {
+                color: var(--red);
+                border-color: var(--red);
+                margin-right: 16px;
+            }
+            @media (max-width: 770px) and (min-width: 601px) {
+                width: 130px;
+                .news-item__delete-button {
+                    margin-right: 0;
+                    margin-bottom: 8px;
+                }
+            }
+            @media (max-width: 400px) {
+                width: 100px;
+                .news-item__delete-button {
+                    margin-right: 0;
+                    margin-bottom: 8px;
+                }
+            }
+        }
     }
 }

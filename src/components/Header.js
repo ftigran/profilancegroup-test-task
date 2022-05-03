@@ -13,7 +13,7 @@ export const Header = () => {
     return (
         <header className="header">
             <Link to="/" className="header__logo">
-                <img src={logo} />
+                <img src={logo} alt="Логотип профиланс групп" />
             </Link>
             <div className="header__nav">
                 <Link to="/news">Новости</Link>

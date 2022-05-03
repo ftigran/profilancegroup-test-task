@@ -16,6 +16,10 @@
             position: relative;
             min-width: 280px;
             & > div {
+                input,
+                textarea {
+                    width: 180px !important;
+                }
                 padding: 5px 0;
                 display: flex;
                 justify-content: space-between;
@@ -28,19 +32,6 @@
                 .sign-in__ {
                     &error {
                         color: var(--red);
-                    }
-                    &button {
-                        // background: var(--peach);
-                        // border: 1px solid #ccc;
-                        // font-weight: bold;
-                        // font-size: 16px;
-                        // border-radius: 8px;
-                        // padding: 8px 16px;
-                        // transition: background 0.3s;
-                        // cursor: pointer;
-                        // &:hover {
-                        //     background: #ccc;
-                        // }
                     }
                 }
             }

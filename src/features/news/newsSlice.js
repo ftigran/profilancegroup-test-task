@@ -3,8 +3,6 @@ import { news } from "./news";
 
 const initialState = {
     news: news,
-    value: 0,
-    status: "idle",
 };
 
 export const newsReducer = createSlice({
@@ -12,8 +10,13 @@ export const newsReducer = createSlice({
     initialState,
     reducers: {
         createNews: (state, action) => {
-            state.type = action.payloadtype;
-            state.login = action.payload.login;
+            const lastNews = state.news[state.news.length - 1];
+            const id = lastNews ? lastNews.id + 1 : 0;
+            const currentNews = Object.assign(
+                { id, isApproved: false },
+                action.payload
+            );
+            state.news.push(currentNews);
         },
         approveNews: (state, action) => {
             const approvedNews = state.news.find(

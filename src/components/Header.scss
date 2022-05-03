@@ -8,6 +8,10 @@
     box-sizing: border-box;
     box-shadow: 0 -6px 11px 0 #000;
     align-items: center;
+    background: #fff;
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
     &__ {
         &logo {
             padding: 8px;
