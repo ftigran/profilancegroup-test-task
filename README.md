@@ -1,6 +1,27 @@
 ![Profilance Group](https://static.tildacdn.com/tild3638-3338-4136-b038-313132306438/Group_640.svg "Profilance Group")
 
-# Тестовое задание для frontend-разработчика Profilance Group
+Тестовое задание для frontend-разработчика Profilance Group
+
+# Развёртывание
+
+`npm i` установка зависимостей
+
+`npm run start` - запуск dev server
+
+`npm run dev` - сборка в режиме разработки
+
+`npm run build` - сборка в режиме продакшн
+
+## Website pages
++ [Main page](https://ftigran.github.io/profilancegroup-test-task/)
++ [News](https://ftigran.github.io/profilancegroup-test-task/news)
+
+## Пользователи
+тип учетной записи - `логин`/`пароль`
++ Пользователь - `ftigran`/`123`
++ Админ - `admin`/`admin`
+
+# ТЗ
 
 Создать SPA на React + Redux. Использовать JS/JSX  
 Вверху должна быть строка меню: Логотип из задания(при клике на него происходит переход на главную), Новости, Вход/Выход
