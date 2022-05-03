@@ -15,14 +15,25 @@
             border-radius: 8px;
             position: relative;
             min-width: 280px;
+            @media (max-width: 600px) {
+                width: 100%;
+                margin: 8px;
+            }
             & > div {
-                input,
-                textarea {
-                    width: 180px !important;
-                }
                 padding: 5px 0;
                 display: flex;
                 justify-content: space-between;
+                
+                @media (max-width: 600px) {
+                    flex-wrap: wrap;
+                }
+                input,
+                textarea {
+                    width: 180px !important;
+                    @media (max-width: 600px) {
+                        width: 100% !important;
+                    }
+                }
                 &:last-child {
                     justify-content: flex-end;
                 }
