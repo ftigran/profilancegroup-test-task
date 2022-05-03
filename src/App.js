@@ -2,16 +2,12 @@ import React from "react";
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { News } from "./pages/News";
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
 
 function App() {
     return (
-        <Router
-        // basename={'https://ftigran.github.io/profilancegroup-test-task/'}
-        >
+        <Router>
             <div className="app">
                 <Header />
                 <Routes>
