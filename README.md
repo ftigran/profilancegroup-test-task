@@ -16,9 +16,10 @@
 + [Main page](https://ftigran.github.io/profilancegroup-test-task/)
 + [News](https://ftigran.github.io/profilancegroup-test-task/news)
 
-## Пользователи (тип учетной записи - логин/пароль)
-Пользователь - `ftigran`/`123`
-Админ - `admin`/`admin`
+## Пользователи
+тип учетной записи - `логин`/`пароль`
++ Пользователь - `ftigran`/`123`
++ Админ - `admin`/`admin`
 
 # ТЗ
 
