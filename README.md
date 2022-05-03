@@ -14,7 +14,7 @@
 
 ## Website pages
 + [Main page](https://ftigran.github.io/profilancegroup-test-task/)
-+ [News](https://ftigran.github.io/profilancegroup-test-task/news)
++ [News](https://ftigran.github.io/profilancegroup-test-task/#/news)
 
 ## Пользователи
 тип учетной записи - `логин`/`пароль`
